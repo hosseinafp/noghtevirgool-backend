@@ -4,7 +4,7 @@ from user.serializers import UserListSerializer
 
 
 class PostSerializer(serializers.ModelSerializer):
-    owner = UserListSerializer()
+    owner = UserListSerializer(read_only=True)
     class Meta:
         model = Post
         fields = "__all__"
